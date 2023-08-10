@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Icons\card0.png" />
+    <None Remove="Icons\card1.png" />
+    <None Remove="Icons\card2.png" />
+    <None Remove="Icons\card3.png" />
+    <None Remove="Icons\card4.png" />
+    <None Remove="Icons\card5.png" />
+    <None Remove="Icons\card6.png" />
+    <None Remove="Icons\restart.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="system.drawing.common" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OpenMacroBoard.SDK\OpenMacroBoard.SDK.csproj" />
+    <ProjectReference Include="..\StreamDeckSharp\StreamDeckSharp.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\card0.png" />
+    <EmbeddedResource Include="Icons\card1.png" />
+    <EmbeddedResource Include="Icons\card2.png" />
+    <EmbeddedResource Include="Icons\card3.png" />
+    <EmbeddedResource Include="Icons\card4.png" />
+    <EmbeddedResource Include="Icons\card5.png" />
+    <EmbeddedResource Include="Icons\card6.png" />
+    <EmbeddedResource Include="Icons\restart.png" />
+  </ItemGroup>
+
+</Project>

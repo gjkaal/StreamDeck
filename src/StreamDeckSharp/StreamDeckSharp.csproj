@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
-    <LangVersion>9.0</LangVersion>
+    <LangVersion>10.0</LangVersion>
   </PropertyGroup>
 
   <!-- nuget stuff -->
@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OpenMacroBoard.SDK\OpenMacroBoard.SDK.csproj" />
+    <ProjectReference Include="..\OpenMacroBoard.SocketIO\OpenMacroBoard.SocketIO.csproj" />
   </ItemGroup>
 
 </Project>

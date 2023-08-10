@@ -29,4 +29,5 @@ At the moment there are only three `IMacroBoard` providers
 
 
 # Credits
-Based on the code for OpenMacroBoard.SDK and StreamDeckSharp 
+Based on the code for OpenMacroBoard.SDK and [StreamDeckSharp](https://github.com/OpenMacroBoard/StreamDeckSharp)
+
