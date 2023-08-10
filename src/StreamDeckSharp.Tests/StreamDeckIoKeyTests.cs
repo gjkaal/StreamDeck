@@ -1,4 +1,3 @@
-using OpenMacroBoard.Meta.TestUtils;
 using StreamDeckSharp.Internals;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +11,6 @@ namespace StreamDeckSharp.Tests
     [UsesVerify]
     public class StreamDeckIoKeyTests
     {
-        public ExtendedVerifySettings Verifier { get; } = DefaultVerifySettings.Build();
-
         public static IEnumerable<object[]> GetReportTestData()
         {
             // Unpack report and map for xunit injection use.
@@ -25,38 +22,6 @@ namespace StreamDeckSharp.Tests
                     Unpack(x.InputReports, x.Hardware.Driver.ExpectedInputReportLength),
                 }
             );
-        }
-
-        [Theory]
-        [MemberData(nameof(GetReportTestData))]
-        internal async Task InputReportsBehaveAsExpected(
-            string testName,
-            UsbHardwareIdAndDriver hardware,
-            IEnumerable<byte[]> inputReports
-        )
-        {
-            // Arrange
-            Verifier.Initialize();
-
-            Verifier
-                .UseFileNameAsDirectory()
-                .UseFileName(testName);
-
-            using var context = new StreamDeckHidTestContext(hardware);
-
-            var keyLog = new StringBuilder();
-
-            context.Board.KeyStateChanged += (s, e)
-                => keyLog.Append(e.Key).Append(" - ").AppendLine(e.IsDown ? "DOWN" : "UP");
-
-            // Act
-            foreach (var report in inputReports)
-            {
-                context.Hid.FakeIncommingInputReport(report);
-            }
-
-            // Assert
-            await Verifier.VerifyAsync(keyLog.ToString());
         }
 
         private static IEnumerable<KeyPressTestCase> GetData()

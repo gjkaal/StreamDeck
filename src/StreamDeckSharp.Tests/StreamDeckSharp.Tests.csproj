@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net5.0</TargetFrameworks>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
     <LangVersion>9</LangVersion>
     <IsPackable>false</IsPackable>
     <AssemblyName>StreamDeckSharp.Tests</AssemblyName>
@@ -25,10 +25,8 @@
     </PackageReference>
   </ItemGroup>
 
-  <Import Project="..\..\..\analyzers.targets" />
-
   <ItemGroup>
-    <PackageReference Include="OpenMacroBoard.SDK" Version="5.0.0" />
+    <ProjectReference Include="..\OpenMacroBoard.SDK\OpenMacroBoard.SDK.csproj" />
     <ProjectReference Include="..\StreamDeckSharp\StreamDeckSharp.csproj" />
   </ItemGroup>
 
